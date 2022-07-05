@@ -23,4 +23,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
+          - name: Install Apache
+        run: |
+          pwd
+          sudo apt update
+          sudo apt install apache2
       run: mvn -B package --file pom.xml
